@@ -23,6 +23,46 @@ Go to Export folder under lib folder run following command</br>
    localPath: Provide path where you want to generate configuration</br>
    tags: connectors,topics,schemas you can provider multiple tag with comma separated</br>
    
+ # Exported Json Example
+ 
+         [
+     {
+    "name": "testyyy111",
+    "config": {
+      "connector.class": "org.apache.kafka.connect.file.FileStreamSinkConnector",
+      "topics": "test",
+      "name": "testyyy111"
+    },
+    "tasks": [
+      {
+        "connector": "testyyy",
+        "task": 0
+      }
+    ],
+    "type": "sink"
+      },
+     {
+    "name": "FileStreamSinkConnectorConnector_0111",
+    "config": {
+      "connector.class": "org.apache.kafka.connect.file.FileStreamSinkConnector",
+      "tasks.max": "2",
+      "topics": "default_ksql_processing_log",
+      "name": "FileStreamSinkConnectorConnector_0111"
+    },
+    "tasks": [
+      {
+        "connector": "FileStreamSinkConnectorConnector_0",
+        "task": 0
+      },
+      {
+        "connector": "FileStreamSinkConnectorConnector_0",
+        "task": 1
+      }
+    ],
+    "type": "sink"
+    }
+    ]  
+   
 ### For Import
 Go to Import folder under lib folder run following command</br>
 
